@@ -628,10 +628,10 @@
                         <div ref={swiperRef} className="swiper mySwiper">
                            <div className="swiper-wrapper">
                               {timelineEvents.map((event, index) => (
-                                 <div className="swiper-slide" style={{ width: '220px' }}>
-                                    <div className="flex justify-center mt-6 z-10">
+                                 <div className="swiper-slide" key={index}>
+                                    <div className="flex justify-center mt-6 z-10" style={{ width: '100%' }}>
                                        <div className="flex flex-col items-center">
-                                          <div className="w-full relative z-1 flex flex-col justify-center items-center">
+                                          <div className="w-full relative z-1 max-w-[220px] flex flex-col justify-center items-center">
                                              <div className="relative flex items-center justify-center cursor-pointer">
                                                 <div className={`absolute w-10 h-10 bg-[#ff9582] rounded-full opacity-20 ${event.isCurrent ? 'animate-pulseLayer1' : ''}`}></div>
                                                 <div className={`absolute w-8 h-8 bg-[#ff9582] rounded-full opacity-40 ${event.isCurrent ? 'animate-pulseLayer2' : ''}`}></div>
@@ -641,7 +641,7 @@
                                              <div className="bg-[#954d37] w-1 h-10"></div>
                                           </div>
 
-                                          <div className={`rounded-lg border-2 mr-4 h-[240px] bg-[#2a160f] ${event.isCurrent ? 'border-[#ff9582] animate-borderPulse' : 'border-[#954d37]'}`}>
+                                          <div className={`rounded-lg border-2 mr-4 h-[240px] max-w-[220px] bg-[#2a160f] ${event.isCurrent ? 'border-[#ff9582] animate-borderPulse' : 'border-[#954d37]'}`}>
                                              <div className="flex flex-col justify-between p-4 py-8 h-full">
                                                 <div className="text-center">
                                                    <p className="text-[#ff9582] text-lg font-semibold">{event.title}</p>
