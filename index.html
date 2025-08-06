@@ -704,7 +704,7 @@
             if (swiperRef.current) {
                new Swiper(swiperRef.current, {
                   loop: true,
-                  slidesPerView: 1,
+                  slidesPerView: 1, 
                   centeredSlides: true,
                   grabCursor: true,
                   speed: 600,
@@ -713,18 +713,32 @@
                      prevEl: '.swiper-button-prev'
                   },
                   breakpoints: {
-                     768: {
+                     600: {
+                        slidesPerView: 2,
+                        centeredSlides: false
+                     },
+                     700: {
                         slidesPerView: 3,
                         centeredSlides: false
                      },
-                     1024: {
+                     900: {
+                        slidesPerView: 3,
+                        centeredSlides: false
+                     },
+                     1100: {
+                        slidesPerView: 3,
+                        centeredSlides: false
+                     },
+                     1300: {
                         slidesPerView: 4,
                         centeredSlides: false
                      }
+
                   }
                });
             }
          }, []);
+
 
          return (
             <div className="relative justify-center flex flex-col lg:flex-row gap-8 items-center">
@@ -756,8 +770,8 @@
                         <div ref={swiperRef} className="swiper mySwiper">
                            <div className="swiper-wrapper">
                               {timelineEvents.map((event, index) => (
-                                 <div className="swiper-slide" key={index}>
-                                    <div className="flex justify-center mt-6 z-10" style={{ width: '100%' }}>
+                                 <div className="swiper-slide w-full" key={index}>
+                                    <div className="flex justify-center mt-6 z-10">
                                        <div className="flex flex-col items-center">
                                           <div className="w-full relative z-1 max-w-[220px] flex flex-col justify-center items-center">
                                              <div className="relative flex items-center justify-center cursor-pointer">
