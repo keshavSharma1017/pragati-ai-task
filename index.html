@@ -10,7 +10,9 @@
    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <style>
-      /* Custom styles to override default Swiper arrow positioning */
+      html {
+  scroll-behavior: smooth;
+}
       .swiper-button-prev,
       .swiper-button-next {
          background-color: #3a3e41;
@@ -19,7 +21,6 @@
          height: 40px;
          border-radius: 9999px;
          position: static;
-         /* Important: Override default absolute positioning */
          margin: 0;
          top: auto;
          transform: none;
@@ -32,7 +33,6 @@
       .swiper-button-next:after {
          font-size: 1.5rem;
          content: "";
-         /* Use SVG icons instead of Swiper's default content */
       }
 
       .swiper-button-disabled {
@@ -40,7 +40,6 @@
          cursor: not-allowed;
       }
 
-      /* Custom animations */
       @keyframes borderPulse {
          0% {
             border-color: #954d37;
@@ -113,10 +112,12 @@
         }
 
         .faq-content.faq-open {
-            max-height: 500px; /* A large value to ensure content fits */
+            max-height: 500px; 
             opacity: 1;
         }
-        
+        #meta-about-section {
+          scroll-margin-top: 100px; 
+        }
    </style>
 </head>
 
@@ -172,7 +173,7 @@
     <div class="w-full mx-auto max-sm:pb-16 max-md:py-2">
         <!-- Desktop Hero -->
         <div class="w-full relative hidden md:block mx-auto max-lg:mt-4">
-            <video width="100%" loop="" autoplay="" src="https://h2svision.github.io/publicAssets/vision/meta/header_section_desktop.mp4" class="object-contain"></video>
+            <video width="100%" muted="" autoplay="" src="https://h2svision.github.io/publicAssets/vision/meta/header_section_desktop.mp4" class="object-contain"></video>
             <div class="hidden sm:block !px-10 max-sm:!px-4 absolute w-full top-14 md:top-16 mt-1">
                 <div class="flex flex-col gap-0 lg:gap-3 max-w-[1440px] mx-auto w-full lg:mt-[2%]">
                     <img class="w-[400px] max-xl:w-[300px] max-lg:w-[200px] max-md:w-[160px] h-auto" src="https://h2svision.github.io/publicAssets/vision/meta/meta_nudge_logo.png" alt="Meta Nudge Logo">
@@ -194,7 +195,7 @@
                 <img class="w-[280px] md:w-[120px] lg:w-[120px] h-auto" src="https://h2svision.github.io/publicAssets/vision/meta/meta_nudge_logo.png" alt="Meta Nudge Logo">
                 <img class="w-[220px] md:w-[120px] lg:w-[120px] h-auto" src="https://h2svision.github.io/publicAssets/vision/meta/metaIconAddMob.png">
             </div>
-            <video src="https://h2svision.github.io/publicAssets/vision/meta/firstfoldphoneview.mp4" autoplay="" class="object-cover" loop="" width="100%"></video>
+            <video src="https://h2svision.github.io/publicAssets/vision/meta/firstfoldphoneview.mp4" muted="" class="object-cover" loop="" width="100%"></video>
             <div class="absolute bottom-0 max-sm:w-[80%] flex flex-col items-center gap-3 max-sm:gap-0 max-md:left-[34px]">
                 <div class="flex flex-col gap-8">
                     <img class="w-[250px] md:w-[230px] lg:w-[250px] h-auto" src="https://h2svision.github.io/publicAssets/vision/meta/pragati_ai_logo.png" alt="Pragati AI Logo">
@@ -215,7 +216,7 @@
     </div>
   <section id="meta-about-section">
         <div class="md:mb-20 lg:mb-0 w-full max-2xl:mt-20 md:pb-2 lg:pb-2 max-sm:mt-10 max-sm:mb-16 max-[480px]:mb-20 max-[375px]:mb-24">
-            <div class="relative w-full h-full m-0 p-0">
+            <div  class="relative w-full h-full m-0 p-0">
                 <div class="hidden sm:block w-full relative">
                   <video id="desktop-video" width="100%"
                         src="https://h2svision.github.io/publicAssets/vision/meta/about_section_desktop.mp4" 
